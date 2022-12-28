@@ -13,6 +13,14 @@ pipeline {
              
           }
         }
+      stage('Code Analysis') {
+           steps {
+                withSonarQubeEnv('mysonarqube')
+               {
+                   sh 'mvn sonar:sonar'
+               }
+           }
+         }
       stage('Build') {
            steps {
                sh 'mvn clean test package'
