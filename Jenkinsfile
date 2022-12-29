@@ -54,7 +54,7 @@ pipeline {
         }
               stage('OWASP DAST') {
            steps {
-               sh 'docker run -dt owasp/zap2docker-stable zap-baseline.py -t http://65.0.176.60:8090/hello-world-maven/'
+               sh 'docker run -dt owasp/zap2docker-stable zap-baseline.py -t http://65.0.176.60:8090/hello-world-maven/ -x report.xml'
             }
         }
     }
