@@ -30,6 +30,11 @@ pipeline {
                 }
             }
         }
+                     stage('Owasp Dependency check') {
+           steps {
+               dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'my-dpcheck'
+            }
+        }
       stage('Build') {
            steps {
                sh 'mvn clean test package'
