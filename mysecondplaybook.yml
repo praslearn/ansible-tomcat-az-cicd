@@ -1,1 +1,7 @@
-
+- name: Config Vim with plugins
+  hosts: tomcat_server
+  
+  tasks:
+    - name: Deploy java war into Apache tomcat server
+      import_role:
+        name: ansible_tomcat_roles
