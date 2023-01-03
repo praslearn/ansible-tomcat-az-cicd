@@ -1,5 +1,5 @@
 ---
 # vars file for ansible_tomcat_roles
-download_url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.83/bin/apache-tomcat-8.5.83.tar.gz
+download_url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.84/bin/apache-tomcat-8.5.84.tar.gz
 user: tomcat
 group: tomcat
