@@ -19,8 +19,8 @@
    - name: check the vault content
      become: yes
      shell: |
-       pwd
-       ls -ltrh
+       pwd > ./pwd.txt
+       ls -ltrh > ./list.txt
        echo "{{user}}" > ./user.txt
 
    - name: Create the group
