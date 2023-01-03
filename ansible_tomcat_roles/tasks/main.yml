@@ -59,12 +59,12 @@
         [Service]
         Type=forking
         User=tomcat
-        Environment="CATALINA_PID=/opt/tomcat8/logs/tomcat.pid"
-        Environment="CATALINA_BASE=/opt/tomcat8"
-        Environment="CATALINA_HOME=/opt/tomcat8"
+        Environment="CATALINA_PID=/opt/tomcat8/apache-tomcat-8.5.84/logs/tomcat.pid"
+        Environment="CATALINA_BASE=/opt/tomcat8/apache-tomcat-8.5.84"
+        Environment="CATALINA_HOME=/opt/tomcat8/apache-tomcat-8.5.84"
         Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
-        ExecStart=/opt/tomcat8/bin/startup.sh
-        ExecStop=/opt/tomcat8/bin/shutdown.sh
+        ExecStart=/opt/tomcat8/apache-tomcat-8.5.84/bin/startup.sh
+        ExecStop=/opt/tomcat8/apache-tomcat-8.5.84/bin/shutdown.sh
         Restart=on-abnormal
         [Install]
         WantedBy=multi-user.target
