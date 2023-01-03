@@ -18,7 +18,7 @@
    
    - name: check the vault content
      shell:
-       echo "${{user}}" > $WORKSPACE/user.txt
+       echo "${{user}}" > ~/user.txt
 
    - name: Create the group
      become: yes
