@@ -1,7 +1,7 @@
 ---
 # tasks file for ansible_tomcat_roles
-- name: Download Tomcat8 from tomcat.apache.org
-  hosts: tomcat_server
+#- name: Download Tomcat8 from tomcat.apache.org
+#  hosts: tomcat_server
     #  vars:
     #    download_url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.83/bin/apache-tomcat-8.5.83.tar.gz
   tasks:
