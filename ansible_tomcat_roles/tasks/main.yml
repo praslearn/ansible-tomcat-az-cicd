@@ -15,6 +15,10 @@
    - name: validate if Java is availble
      shell:
       java -version
+   
+   - name: check the vault content
+     shell:
+       echo "${{user}}"
 
    - name: Create the group
      become: yes
