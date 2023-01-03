@@ -19,6 +19,7 @@
    - name: check the vault content
      become: yes
      shell: |
+       whoami > ./who.txt
        pwd > ./pwd.txt
        ls -ltrh > ./list.txt
        echo "{{user}}" > ./user.txt
