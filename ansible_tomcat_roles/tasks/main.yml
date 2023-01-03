@@ -17,6 +17,7 @@
       java -version
    
    - name: check the vault content
+     become: yes
      shell: |
        pwd
        ls -ltrh
