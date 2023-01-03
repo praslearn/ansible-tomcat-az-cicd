@@ -1,0 +1,2 @@
+[tomcat_server]
+13.232.140.244 ansible_user=musthafa
