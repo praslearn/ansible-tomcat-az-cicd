@@ -78,7 +78,7 @@
    - name: Copy war files to tomcat
      copy:
        src: /var/lib/jenkins/workspace/jenkins-ansible-roles-cicd/target/hello-world-maven.war
-       dest: /usr/share/tomcat/webapps/
+       dest: /opt/tomcat8/apache-tomcat-8.5.84/webapps/
        owner: tomcat
        group: tomcat
        mode: 0644
