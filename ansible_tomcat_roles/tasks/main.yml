@@ -76,6 +76,7 @@
    - name: Remove the existing war file
      shell: rm -rf /opt/tomcat8/webapps/hello-world-maven.war 
    - name: Copy war files to tomcat
+     become: yes
      copy:
        src: /var/lib/jenkins/workspace/jenkins-ansible-roles-cicd/target/hello-world-maven.war
        dest: /opt/tomcat8/apache-tomcat-8.5.84/webapps/
