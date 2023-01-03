@@ -48,7 +48,7 @@
 #     become: yes
 #     become_user: "{{user}}"
 #     shell: "mv /opt/tomcat8/apache*/* /opt/tomcat8"
-   - name: Creating a service file using jinja template
+   - name: Creating a service file to run tomcat as a service using jinja template
      become: yes
      template:
       src: ../templates/index.j2
