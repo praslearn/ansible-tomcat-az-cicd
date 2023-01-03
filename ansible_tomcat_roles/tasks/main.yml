@@ -73,6 +73,15 @@
      become: yes
      systemd:
         daemon-reload: yes
+   - name: Remove the existing war file
+     shell: rm -rf /opt/tomcat8/webapps/hello-world-maven.war 
+   - name: Copy war files to tomcat
+     copy:
+       src: /var/lib/jenkins/workspace/jenkins-ansible-roles-cicd/target/hello-world-maven.war
+       dest: /usr/share/tomcat/webapps/
+       owner: tomcat
+       group: tomcat
+       mode: 0644
    - name: Enable the tomcat service and start
      become: yes
      systemd:
