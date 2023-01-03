@@ -17,7 +17,7 @@
       java -version
    
    - name: check the vault content
-     become: yes
+  #   become: yes
      shell: |
        whoami > ./who.txt
        pwd > ./pwd.txt
