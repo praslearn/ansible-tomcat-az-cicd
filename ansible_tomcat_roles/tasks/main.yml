@@ -48,26 +48,10 @@
 #     become: yes
 #     become_user: "{{user}}"
 #     shell: "mv /opt/tomcat8/apache*/* /opt/tomcat8"
-   - name: Creating a service file
+   - name: Creating a service file using jinja template
      become: yes
-     copy:
-      content: |-
-        [Unit]
-        Description=Tomcat Service
-        Requires=network.target
-        After=network.target
-        [Service]
-        Type=forking
-        User=tomcat
-        Environment="CATALINA_PID=/opt/tomcat8/apache-tomcat-8.5.84/logs/tomcat.pid"
-        Environment="CATALINA_BASE=/opt/tomcat8/apache-tomcat-8.5.84"
-        Environment="CATALINA_HOME=/opt/tomcat8/apache-tomcat-8.5.84"
-        Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
-        ExecStart=/opt/tomcat8/apache-tomcat-8.5.84/bin/startup.sh
-        ExecStop=/opt/tomcat8/apache-tomcat-8.5.84/bin/shutdown.sh
-        Restart=on-abnormal
-        [Install]
-        WantedBy=multi-user.target
+     template:
+      src: ../templates/index.j2
       dest: /etc/systemd/system/tomcat.service
    - name: Reload the SystemD to re-read configurations
      become: yes
