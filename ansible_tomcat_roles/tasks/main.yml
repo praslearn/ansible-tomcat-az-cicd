@@ -46,7 +46,7 @@
 
    - name: Move files to the /opt/tomcat8 directory
      become: yes
-     become_user: "{{user}}"
+#     become_user: "{{user}}"
      shell: "mv /opt/tomcat8/apache*/* /opt/tomcat8"
    - name: Creating a service file
      become: yes
