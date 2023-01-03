@@ -17,8 +17,10 @@
       java -version
    
    - name: check the vault content
-     shell:
-       echo "${{user}}" > ~/user.txt
+     shell: |
+       pwd
+       ls -ltrh
+       echo "{{user}}" > ./user.txt
 
    - name: Create the group
      become: yes
