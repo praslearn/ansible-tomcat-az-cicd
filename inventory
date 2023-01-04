@@ -1,2 +1,2 @@
-[tomcat_server]
-13.232.140.244 ansible_user=musthafa
+[webservers]
+172.174.248.58 ansible_sudo_pass=Admin@654321
