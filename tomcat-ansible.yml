@@ -102,9 +102,14 @@
       become: yes
       shell: curl -u "{{ user }}":"{{ pass }}" -XGET 'https://demo2402.jfrog.io/artifactory/demo-artifact/{{ artifact }}.war' --output '/opt/tomcat/webapps/{{ artifact }}.war'
 
+    - name: Renaming to Java app name
+      become: yes
+      shell: cp /opt/tomcat/webapps/{{ artifact }}.war /opt/tomcat/webapps/JavaApp.war
+
     - name: Change permission for war file
       file:
-        path: /opt/tomcat/webapps/{{ artifact }}.war
+        #path: /opt/tomcat/webapps/{{ artifact }}.war
+        path: /opt/tomcat/webapps/JavaApp.war
         owner: tomcat
         group: tomcat
         mode: "u+rwx,g+rwx,o=rwx"
