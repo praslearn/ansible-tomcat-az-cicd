@@ -3,7 +3,8 @@
   hosts: webservers
   become_method: sudo
   remote_user: azureuser
-
+  vars:
+  - artifact : $(artifacts)
   vars_files:
     - pass.yml
   become: true
