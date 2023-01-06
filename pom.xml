@@ -35,6 +35,6 @@
     </plugins>
 
     <!-- The output .war file's name, which will be the name of the webapp. -->
-    <finalName>${project.artifactId.version}</finalName>
+    <finalName>${project.artifactId}</finalName>
   </build>
 </project>
