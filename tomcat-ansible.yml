@@ -4,7 +4,7 @@
   become_method: sudo
   remote_user: azureuser
   vars:
-    - artifact : artifact1
+    - artifact : $(pipartifact)
   vars_files:
     - pass.yml
   become: true
