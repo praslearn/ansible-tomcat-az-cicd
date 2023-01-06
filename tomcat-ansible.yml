@@ -3,6 +3,8 @@
   hosts: webservers
   become_method: sudo
   remote_user: azureuser
+  vars:
+    - artifact
   vars_files:
     - pass.yml
   become: true
@@ -98,7 +100,7 @@
     
     - name: Download war file
       become: yes
-      shell: curl -u "{{ user }}":"{{ pass }}" -XGET https://demo2402.jfrog.io/artifactory/demo-artifact/hello-world-maven.war --output /opt/tomcat/webapps/hello-world-maven.war
+      shell: curl -u "{{ user }}":"{{ pass }}" -XGET 'https://demo2402.jfrog.io/artifactory/demo-artifact/{{ artifact }}.war' --output '/opt/tomcat/webapps/{{ artifact }}.war'
 
     - name: Change permission for war file
       file:
