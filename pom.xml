@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.happycoding</groupId>
-  <artifactId>hello-world-maven</artifactId>
+  <artifactId>ansible</artifactId>
   <version>1.0.23</version>
   <packaging>war</packaging>
 
