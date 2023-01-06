@@ -104,7 +104,7 @@
 
     - name: Change permission for war file
       file:
-        path: /opt/tomcat/webapps/hello-world-maven.war
+        path: /opt/tomcat/webapps/{{ artifact }}.war
         owner: tomcat
         group: tomcat
         mode: "u+rwx,g+rwx,o=rwx"
